@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.chibuzor.finalyearproject.model.TrafficData" table="Traffic_Data">
+        <id name="id" type="long">
+            <column name="ID"/>
+            <generator class="native"/>
+        </id>
+        <property name="entryDate" type="java.util.Date">
+            <column name="entryDate" />
+        </property>
+        <property name="streetID" type="java.lang.String">
+            <column name="streetID" />
+        </property>
+    </class>
+</hibernate-mapping>

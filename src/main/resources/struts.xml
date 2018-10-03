@@ -12,6 +12,40 @@
         <action name="index">
             <result>/index.jsp</result>
         </action>
+        <action name="pusher" method="pusherTest" class="com.chibuzor.finalyearproject.action.TrafficDataAction">
+            <result name="success">/index.jsp</result>
+        </action>
+        <action name="getChartData" method="getChartData" class="com.chibuzor.finalyearproject.action.TrafficDataAction">
+            <result name="success"></result>
+        </action>
+    </package>
+    <package name="api" namespace="/api" extends="json-default">
+        <action name="pusher" method="pusherTest" class="com.chibuzor.finalyearproject.action.TrafficDataAction">
+            <result name="success" type="json">
+                <param name="excludeNullProperties">true</param>
+                <param name="statusCode">200</param>
+            </result>
+        </action>
+
+        <action name="getChartData" method="filterChartData" class="com.chibuzor.finalyearproject.action.TrafficDataAction">
+            <result name="success" type="json">
+                <param name="excludeNullProperties">true</param>
+                <param name="statusCode">200</param>
+            </result>
+        </action>
+
+        <action name="vehicleDetected" method="addTrafficEntry" class="com.chibuzor.finalyearproject.action.TrafficDataAction">
+            <result name="success" type="json">
+                <param name="excludeNullProperties">true</param>
+                <param name="statusCode">200</param>
+            </result>
+            <result name="error" type="json">
+                <param name="errorCode">500</param>
+            </result>
+            <result name="input" type="json">
+                <param name="errorCode">400</param>
+            </result>
+        </action>
     </package>
 
 </struts>

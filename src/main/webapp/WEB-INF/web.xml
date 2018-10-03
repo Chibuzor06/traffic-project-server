@@ -25,4 +25,8 @@
       <url-pattern>/*</url-pattern>
     </filter-mapping>
 
+    <listener>
+        <listener-class>com.chibuzor.finalyearproject.util.HibernateServletContextListener</listener-class>
+    </listener>
+
 </web-app>
